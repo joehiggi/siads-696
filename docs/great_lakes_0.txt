@@ -1,0 +1,27 @@
+Starting a Session with GreatLakes
+
+- Login with your preferred method
+	- Windows can use "Putty" (a GUI for the command line interface (CLI))
+	- Mac can use zsh (shell)
+	- I believe both require the installation of the Cisco VPN
+		- Get Connected: https://documentation.its.umich.edu/node/5093
+- Once VPN is installed you need to activate it each time you want to start a session with GreatLakes
+	- You do this through the Cisco desktop application
+	- Select the icon
+		- Select the network you wish to join ("UMVPN - Only U-M Traffic")
+- Login to GreatLakes
+	- From shell `ssh input_your_username@greatlakes.arc-ts.umich.edu` (my username is joehiggi so would be `ssh joehiggi@greatlakes.arc-tes.umich.edu`)
+
+
+Submitting jobs to GreatLakes (once a session has been started)
+
+- Load "mamba" module with `module load mamba`
+	- Documentation: https://mamba.readthedocs.io/en/latest/
+		- Mamba is a package manager capabale of spinning up virtual environments
+		- Virtual environments are a way of solving the "well it worked on my machine" problem when sharing code on teams
+		- It packages all dependenices (down to specific version) of required modules (such as pandas, sklearn etc.) to ensure there are no dependency mismatches
+- Activate a virtual environment
+	- To activate `mamba activate virtual_env` (virtual_env is a placeholder name)
+	- To deactivate `mamba deactivate virtual_env`
+- Install ipykernel
+	- mamba install ipykernel
