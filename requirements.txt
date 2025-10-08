@@ -17,6 +17,7 @@ et_xmlfile==2.0.0
 executing==2.2.1
 fonttools==4.60.1
 frozendict==2.4.6
+graphviz==0.21
 idna==3.10
 ipykernel==6.30.1
 ipython==9.6.0
