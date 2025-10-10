@@ -25,4 +25,8 @@ Submitting jobs to GreatLakes (once a session has been started)
                 		- It packages all dependenices (down to specific version) of required modules (such as pandas, sklearn etc.) to ensure there are no dependency mismatches
 
 - Submit batch job with `srun testing/siads-696/test_0.py`
+
+Other
+- Synchronizing local files to great lakes (run from local cli)
+	- "rsync -avzP --exclude='.DS_Store' siads-696/data/ joehiggi@greatlakes-xfer.arc-ts.umich.edu:/home/joehiggi/siads-696/data/"
 	

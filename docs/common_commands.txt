@@ -1,0 +1,2 @@
+rsync -avzP --exclude='.DS_Store' siads-696/data/ joehiggi@greatlakes-xfer.arc-ts.umich.edu:/home/joehiggi/siads-696/data/
+srun siads-696/src/batch_0.sh
