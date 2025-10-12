@@ -1,2 +1,5 @@
 https://colab.research.google.com/github/dlmacedo/starter-academic/blob/master/content/courses/deeplearning/notebooks/pytorch/Time_Series_Prediction_with_LSTM_Using_PyTorch.ipynb
 https://www.kaggle.com/code/jayatou/xgbregressor-with-gridsearchcv
+https://stackoverflow.com/questions/69432869/rmse-cross-validation-using-sklearn
+https://xgboosting.com/configure-xgboost-model-with-parameters-defined-in-a-dict/
+https://discuss.pytorch.org/t/rmse-loss-function/16540
