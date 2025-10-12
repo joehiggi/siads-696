@@ -5,6 +5,7 @@ import numpy as np
 # Importing partial packages
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import root_mean_squared_error
+from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LinearRegression
 from utility import create_lag, load_data
 from tqdm import tqdm
@@ -51,7 +52,8 @@ if __name__ == "__main__":
             scores['anchor'] = i
             scores['neighbor'] = j
             scores['option'] = option
-            scores['rmse'] = root_mean_squared_error(y_test, y_preds)
+            # scores['rmse'] = root_mean_squared_error(y_test, y_preds)
+            scores['rmse'] = cross_val_score(clf_lr, X, y, scoring = 'neg_mean_squared_error', cv = 5, n_jobs = -1)
             scores['model'] = 'Linear Regression'            
             
             # print(scores)
