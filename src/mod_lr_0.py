@@ -53,12 +53,17 @@ if __name__ == "__main__":
             scores['neighbor'] = j
             scores['option'] = option
             # scores['rmse'] = root_mean_squared_error(y_test, y_preds)
-            scores['rmse'] = cross_val_score(clf_lr, X, y, scoring = 'neg_mean_squared_error', cv = 5, n_jobs = -1)
+            scores['rmse'] = np.mean(np.sqrt(np.abs(cross_val_score(clf_lr, X, y, scoring = 'neg_mean_squared_error', cv = 5, n_jobs = -1))))
             scores['model'] = 'Linear Regression'            
             
             # print(scores)
             final.append(scores)
         
-        df_final = pd.DataFrame(final)
-        print(df_final)
-        print(df_final.groupby('option')['rmse'].std())
+    df_final = pd.DataFrame(final)
+    df_final_summary_mean = df_final.groupby('option')['rmse'].mean()
+    df_final_summary_std = df_final.groupby('option')['rmse'].std()
+    print(df_final)
+    print(df_final_summary_mean)
+    print(df_final_summary_std)
+    
+    print(rf"Difference without anchor: {df_final_summary_mean[0]-df_final_summary_mean[1]}")
