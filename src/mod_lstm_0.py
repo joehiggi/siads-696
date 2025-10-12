@@ -9,28 +9,12 @@ import torch
 # Importing partial packages
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
+from utility import create_lag, load_data
 from torch.autograd import Variable
 from tqdm import tqdm
 
 # Ignoring warnings
 warnings.filterwarnings("ignore")
-
-# Defining Custom Functions
-def create_lag(neighbor, dataframe):
-    # Create lag features (e.g., previous 5 days' returns)
-    for i in range(1, 25):
-        dataframe[f"return_lag_{i}"] = dataframe[neighbor].pct_change().shift(i)
-
-    # Create moving average features
-    dataframe["MA_30"] = dataframe[neighbor].rolling(window=30).mean().shift(1)
-    dataframe["MA_60"] = dataframe[neighbor].rolling(window=60).mean().shift(1)
-    dataframe["MA_90"] = dataframe[neighbor].rolling(window=90).mean().shift(1)
-
-    # Drop initial rows with NaNs created by rolling windows
-    dataframe.dropna(inplace=True)
-    dataframe = dataframe.replace([np.inf, -np.inf], np.nan).fillna(0)
-
-    return dataframe
 
 # Defining the LSTM model
 class LSTM(nn.Module):
@@ -65,18 +49,14 @@ class LSTM(nn.Module):
 
 
 if __name__ == "__main__":
-    # Instantiating neighbor groups
-    ng = {"EUR": ["ALL", "CZK", "TND", "RON", "RSD", "DZD", "HUF", "SEK", "ISK", "PLN"]}
-    ls_0 = [i for i in ng.items() if i[0] == "EUR"][0]
-    ls_1 = [ls_0[0] for i in range(len([i for i in ng.items() if i[0] == "EUR"][0][1]))]
-    df_2 = pd.DataFrame({"anchor": ls_1, "neighbor": ls_0[1]})
-    df_0 = pd.read_parquet("../data/input/fx_log_return.parquet")
+	# Importing data
+    neighbor_groups, df_anchor_neighor, df_log_return_pca = load_data()
 
     # Running LSTM for each anchor-neighbor pair
-    for i, j in tqdm(zip(df_2["anchor"], df_2["neighbor"])):
+    for i, j in tqdm(zip(df_anchor_neighor["anchor"], df_anchor_neighor["neighbor"]), total=len(df_anchor_neighor)):
 
         # Preparing data for train test split
-        df_1 = df_0[[i, j]]
+        df_1 = df_log_return_pca[[i, j]]
         df_1.dropna(inplace=True)
         df_1 = create_lag(j, df_1).drop(columns=[i])
         
