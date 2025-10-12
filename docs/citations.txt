@@ -3,3 +3,5 @@ https://www.kaggle.com/code/jayatou/xgbregressor-with-gridsearchcv
 https://stackoverflow.com/questions/69432869/rmse-cross-validation-using-sklearn
 https://xgboosting.com/configure-xgboost-model-with-parameters-defined-in-a-dict/
 https://discuss.pytorch.org/t/rmse-loss-function/16540
+https://www.statology.org/granger-causality-test-in-python/
+https://www.geeksforgeeks.org/machine-learning/k-nearest-neighbours/
