@@ -22,6 +22,8 @@ if __name__ == "__main__":
     for option in ["Training_with_Anchor", "Training_without_Anchor"]:
         
         for i, j in tqdm(zip(df_anchor_neighor["anchor"], df_anchor_neighor["neighbor"]), total=len(df_anchor_neighor)):    
+            
+			# Initializing dictionary to hold scores
             scores = {}
 
             # Preparing data for train test split
@@ -54,7 +56,8 @@ if __name__ == "__main__":
             scores['option'] = option
             # scores['rmse'] = root_mean_squared_error(y_test, y_preds)
             scores['rmse'] = np.mean(np.sqrt(np.abs(cross_val_score(clf_lr, X, y, scoring = 'neg_mean_squared_error', cv = 5, n_jobs = -1))))
-            scores['model'] = 'Linear Regression'            
+            scores['model'] = 'Linear Regression'   
+            scores['params'] = None        
             
             # print(scores)
             final.append(scores)
@@ -66,4 +69,4 @@ if __name__ == "__main__":
     print(df_final_summary_mean)
     print(df_final_summary_std)
     
-    print(rf"Difference without anchor: {df_final_summary_mean[0]-df_final_summary_mean[1]}")
+    print(rf"Difference without anchor: {df_final_summary_mean[0] - df_final_summary_mean[1]}")

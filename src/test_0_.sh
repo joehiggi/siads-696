@@ -14,5 +14,6 @@
 
 mamba activate test_env
 pip install -r requirements.txt
-python model_0.py
-
+python mod_lr_0.py
+python mod_xgboost_0.py
+python mod_lstm_0.py
