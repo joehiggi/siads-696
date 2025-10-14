@@ -88,7 +88,7 @@ if __name__ == "__main__":
             scores['option'] = option
             # scores['rmse'] = root_mean_squared_error(y_test, y_preds)
             scores['rmse'] = np.mean(np.sqrt(np.abs(cross_val_score(xgb.XGBRegressor(**params), X, y, scoring = 'neg_mean_squared_error', cv = 5, n_jobs = -1))))
-            scores['model'] = 'Linear Regression'   
+            scores['model'] = 'XGBoost'   
             scores['params'] = None        
             
             # print(scores)
