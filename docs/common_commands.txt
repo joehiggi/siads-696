@@ -1,2 +1,3 @@
 rsync -avzP --exclude='.DS_Store' siads-696/data/ joehiggi@greatlakes-xfer.arc-ts.umich.edu:/home/joehiggi/siads-696/data/
 srun siads-696/src/batch_0.sh
+cat data/output/ablation_study_lr_results.csv | uniq | sort | uniq | awk -F"|" '{print $1, $2, $3, $4, $7}' | sort | grep "TND" | sort -k4,4
