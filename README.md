@@ -6,9 +6,9 @@
 
 *Our team studied the impact on foreign exchange returns between neighboring countries and anchoring countries (neighboring countries with a larger GDP). We studied:*
 
-`H_0` (null): Anchoring country foreign exchange rates have no impact on foreign exchange return rates of neighboring countries.
+`H_0` (null): Anchoring country foreign exchange return rates have no impact on foreign exchange return rates of neighboring countries.
 
-`H_1` (alternative): Anchoring country foreign exchange rates have impact on foreign exchange return rates of neighboring countries.
+`H_1` (alternative): Anchoring country foreign exchange return rates have impact on foreign exchange return rates of neighboring countries.
 
 
 ### Setup
