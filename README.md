@@ -1,5 +1,6 @@
+# *SIADS 696: Milestone II*
 # Foreign Exchange Return Forecasting of Neighboring Countries based on Powerful Anchor Countries
-## *SIADS 696: Milestone II*
+
 ## *By Team 2: Spencer Cheung, Phuc Nguyen and Joey Higgins*
 
 ### Overview
