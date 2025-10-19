@@ -22,3 +22,7 @@
 ├── docs
 ├── logs
 └── src
+
+### Links
+    - Compiled Notebook: [src/siads_696_1.ipynb](https://github.com/joehiggi/siads-696/blob/main/src/siads_696_1.ipynb)
+    - Data: https://drive.google.com/drive/folders/1yxh53sPbtPPKaZ3giQFF8WvMb0Ky-3v2?usp=share_link
