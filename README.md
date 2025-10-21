@@ -11,7 +11,6 @@
 
 `H_1` (alternative): Anchoring country foreign exchange return rates have impact on foreign exchange return rates of neighboring countries.
 
-
 ### Setup
 
 ```
@@ -24,5 +23,6 @@
 └── src
 
 ### Links
+    - Final Report: [docs/Final_Report_Milestone_II.pdf](https://github.com/joehiggi/siads-696/blob/main/docs/Final_Report_Milestone_II.pdf)
     - Compiled Notebook: [src/siads_696_1.ipynb](https://github.com/joehiggi/siads-696/blob/main/src/siads_696_1.ipynb)
     - Data: https://drive.google.com/drive/folders/1yxh53sPbtPPKaZ3giQFF8WvMb0Ky-3v2?usp=share_link
