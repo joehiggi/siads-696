@@ -24,7 +24,7 @@
 ```
 
 ### Links
-    - Final Report: docs/Final_Report_Milestone_II.pdf[1]
+    - Final Report: [docs/Final_Report_Milestone_II.pdf][1]
     - Compiled Notebook: [src/siads_696_1.ipynb](https://github.com/joehiggi/siads-696/blob/main/src/siads_696_1.ipynb)
     - Data: https://drive.google.com/drive/folders/1yxh53sPbtPPKaZ3giQFF8WvMb0Ky-3v2?usp=share_link
 
